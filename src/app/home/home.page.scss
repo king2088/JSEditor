@@ -1,0 +1,33 @@
+.halfEditor {
+    width: 100%;
+    height: 70%;
+}
+.showResultTitle{
+    height: 5%;
+    width: 100%;
+    background: #BBB;
+    border-bottom: 1px #333 solid;
+    padding: 0 8px;
+    position: relative;
+    .title{
+        position: absolute;
+        top: 50%;
+        left: 5px;
+        transform: translateY(-50%);
+        font-size: 14px;
+        color: rgb(78, 78, 78);
+    }
+    ion-icon {
+        font-size: 20px;
+        position: absolute;
+        top: 50%;
+        right: 5px;
+        transform: translateY(-50%);
+    }
+}
+.showResult {
+    width: 100%;
+    height: 25%;
+    overflow: auto;
+    background: #F2F2F2;
+}
