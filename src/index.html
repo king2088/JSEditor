@@ -11,7 +11,8 @@
   <meta name="format-detection" content="telephone=no" />
   <meta name="msapplication-tap-highlight" content="no" />
 
-  <link rel="icon" type="image/png" href="assets/icon/favicon.png" />
+  <link rel="stylesheet" href="./assets/codemirror/lib/codemirror.css">
+  <link rel="stylesheet" href="./assets/codemirror/theme/material.css">
 
   <!-- add to homescreen for ios -->
   <meta name="apple-mobile-web-app-capable" content="yes" />
@@ -20,10 +21,11 @@
 
 <body>
   <app-root></app-root>
-  <!-- add ace editor framework -->
-  <script src="assets/ace/ace.js"></script>
-  <script src="assets/ace/ext-language_tools.js"></script>
-  <script src="assets/ace/ext-emmet.js"></script>
+  <!-- add codemirror framework -->
+  <script src="./assets/codemirror/lib/codemirror.js"></script>
+  <script src="./assets/codemirror/mode/javascript/javascript.js"></script>
+  <script src="./assets/codemirror/addon/edit/matchbrackets.js"></script>
+  <script src="./assets/codemirror/addon/edit/closebrackets.js"></script>
 </body>
 
 </html>

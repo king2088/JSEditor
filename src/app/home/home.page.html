@@ -15,10 +15,12 @@
 </ion-header>
 
 <ion-content>
-    <div id="editor" #Editor class="halfEditor" (click)="showResultElement()"></div>
-    <div class="showResultTitle" (click)="clearResult()">
-        <div class="title">Result</div>
-        <ion-icon slot="icon-only" name="trash"></ion-icon>
+    <div class="JSEditor" #content>
+        <textarea #editor autofocus></textarea>
+        <div class="showResultTitle" (click)="clearResult()">
+            <div class="title">Result</div>
+            <ion-icon slot="icon-only" name="trash"></ion-icon>
+        </div>
+        <div id="editorResult" #editorResult class="showResult"></div>
     </div>
-    <div id="editorResult" class="showResult"></div>
 </ion-content>
