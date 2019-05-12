@@ -5,9 +5,8 @@
             <ion-label position="floating">文件名</ion-label>
             <ion-input [(ngModel)]="fileName"></ion-input>
         </ion-item>
-        <span>提示：文件名无需填写.js</span>
     </div>
 </ion-content>
 <ion-footer>
-    <ion-button expand="full" [disabled]="!fileName" (click)="saveFile()">保存</ion-button>
+    <ion-button class="fullBtn" expand="full" [disabled]="!fileName" (click)="saveFile()">保存</ion-button>
 </ion-footer>

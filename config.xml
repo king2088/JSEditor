@@ -20,7 +20,6 @@
     <preference name="SplashScreen" value="screen" />
     <preference name="SplashScreenDelay" value="3000" />
     <preference name="StatusBarBackgroundColor" value="#b40c0c" />
-    <!-- 文件操作 -->
     <preference name="iosPersistentFileLocation" value="Compatibility" />
     <preference name="AndroidPersistentFileLocation" value="Compatibility" />
     <preference name="iosExtraFilesystems" value="library,library-nosync,documents,documents-nosync,cache,bundle,root" />
@@ -45,7 +44,6 @@
         <splash density="port-xhdpi" src="resources/android/splash/drawable-port-xhdpi-screen.png" />
         <splash density="port-xxhdpi" src="resources/android/splash/drawable-port-xxhdpi-screen.png" />
         <splash density="port-xxxhdpi" src="resources/android/splash/drawable-port-xxxhdpi-screen.png" />
-        
     </platform>
     <platform name="ios">
         <allow-intent href="itms:*" />
@@ -91,6 +89,8 @@
     <plugin name="cordova-plugin-x-socialsharing" spec="5.4.4">
         <variable name="ANDROID_SUPPORT_V4_VERSION" value="24.1.1+" />
     </plugin>
-    <engine name="android" spec="7.1.4" />
     <plugin name="cordova-plugin-file" spec="6.0.1" />
+    <plugin name="cordova-plugin-app-version" spec="0.1.9" />
+    <plugin name="com-darryncampbell-cordova-plugin-intent" spec="1.1.7" />
+    <engine name="android" spec="7.1.4" />
 </widget>

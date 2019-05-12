@@ -8,14 +8,23 @@ import { SplashScreen } from '@ionic-native/splash-screen/ngx';
 import { StatusBar } from '@ionic-native/status-bar/ngx';
 import { SocialSharing } from '@ionic-native/social-sharing/ngx';
 import { File } from '@ionic-native/file/ngx';
+import { AppVersion } from '@ionic-native/app-version/ngx';
+import { WebIntent } from '@ionic-native/web-intent/ngx';
 
 import { AppComponent } from './app.component';
 import { AppRoutingModule } from './app-routing.module';
-import { SaveModalPage } from './saveModal/saveModal.page';
 
+// modal page
+import { SaveModalPage } from './saveModal/saveModal.page';
+import { LocalCodePage } from './localCode/localCode.page';
+
+// import services
+import { UtilsService } from './services/utils';
+import { FileService } from './services/fileService';
+import { ExampleData } from './services/exampleData';
 @NgModule({
-  declarations: [AppComponent, SaveModalPage],
-  entryComponents: [SaveModalPage],
+  declarations: [AppComponent, SaveModalPage, LocalCodePage],
+  entryComponents: [SaveModalPage, LocalCodePage],
   imports: [
     BrowserModule,
     FormsModule,
@@ -27,6 +36,11 @@ import { SaveModalPage } from './saveModal/saveModal.page';
     SplashScreen,
     SocialSharing,
     File,
+    AppVersion,
+    WebIntent,
+    UtilsService,
+    FileService,
+    ExampleData,
     { provide: RouteReuseStrategy, useClass: IonicRouteStrategy }
   ],
   bootstrap: [AppComponent]

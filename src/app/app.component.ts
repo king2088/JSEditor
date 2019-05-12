@@ -13,17 +13,17 @@ export class AppComponent {
         {
             title: 'JS Editor',
             url: '/home',
-            icon: 'code'
+            icon: 'logo-nodejs'
         },
         {
-            title: 'Example',
+            title: '实例',
             url: '/example',
-            icon: 'laptop'
+            icon: 'stats'
         },
         {
-            title: 'Tutorial',
+            title: '教程',
             url: '/tutorial',
-            icon: 'laptop'
+            icon: 'book'
         }
     ];
 

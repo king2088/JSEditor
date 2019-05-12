@@ -1,24 +1,23 @@
 <ion-header>
-  <ion-toolbar color="primary">
-    <ion-buttons slot="start">
-      <ion-button *ngIf="menuIsEnabel===false"><ion-icon slot="icon-only" name="menu"></ion-icon></ion-button>
-      <ion-menu-button></ion-menu-button>
-    </ion-buttons>
-    <ion-title>
-        JS Editor
-    </ion-title>
-    <ion-buttons slot="end">
-        <ion-button (click)="showResultElement('RUN')">
-            <ion-icon slot="icon-only" name="play-circle"></ion-icon>
-        </ion-button>
-        <ion-button (click)="showTool()">
-            <ion-icon slot="icon-only" name="hammer"></ion-icon>
-        </ion-button>
-      </ion-buttons>
-  </ion-toolbar>
+    <ion-toolbar color="primary">
+        <ion-buttons slot="start">
+            <ion-menu-button></ion-menu-button>
+        </ion-buttons>
+        <ion-title>
+            {{title}}
+        </ion-title>
+        <ion-buttons slot="end">
+            <ion-button (click)="showResultElement('RUN')">
+                <ion-icon slot="icon-only" name="play-circle"></ion-icon>
+            </ion-button>
+            <ion-button (click)="showTool()">
+                <ion-icon slot="icon-only" name="hammer"></ion-icon>
+            </ion-button>
+        </ion-buttons>
+    </ion-toolbar>
 </ion-header>
 
-<ion-content>
+<ion-content drag-content="false">
     <div class="JSEditor" #content>
         <textarea #editor autofocus></textarea>
         <div *ngIf="showResult" class="showResultTitle">
@@ -28,7 +27,10 @@
         <div *ngIf="showResult" id="editorResult" #editorResult class="showResult"></div>
         <div class="tools" *ngIf="showTools">
             <ion-row align-items-center>
-                <ion-col size="2"></ion-col>
+                <ion-col size="2" (click)="openLocalDir()">
+                    <ion-icon name="folder-open"></ion-icon>
+                    <span>打开</span>
+                </ion-col>
                 <ion-col size="2" (click)="undo()">
                     <ion-icon name="undo"></ion-icon>
                     <span>撤销</span>
@@ -45,7 +47,10 @@
                     <ion-icon name="share"></ion-icon>
                     <span>分享</span>
                 </ion-col>
-                <ion-col size="2"></ion-col>
+                <ion-col size="2" (click)="goToMarket()">
+                    <ion-icon name="star"></ion-icon>
+                    <span>打分</span>
+                </ion-col>
             </ion-row>
         </div>
     </div>

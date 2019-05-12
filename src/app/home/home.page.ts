@@ -1,8 +1,12 @@
 import { Component, AfterViewInit, ViewChild, ElementRef } from '@angular/core';
-import { ToastController, ModalController } from '@ionic/angular';
+import { Events, Platform } from '@ionic/angular';
+import { ActivatedRoute, Params } from '@angular/router';
 import { SocialSharing } from '@ionic-native/social-sharing/ngx';
+import { AppVersion } from '@ionic-native/app-version/ngx';
+import { WebIntent } from '@ionic-native/web-intent/ngx';
 import { SaveModalPage } from '../saveModal/saveModal.page';
-
+import { LocalCodePage } from '../localCode/localCode.page';
+import { UtilsService } from '../services/utils';
 declare var CodeMirror: any;
 @Component({
     selector: 'app-home',
@@ -17,17 +21,32 @@ export class HomePage implements AfterViewInit {
     showTools = false;
     // 设置本页console使用其他自定义关键词代替,以下要使用console的地方只能使用iConsole.
     iConsole = console ? { log: console.log } : { log: () => { } };
+    // 打开的文件名称
+    openFileName: string;
+    title = 'JS Editor';
     @ViewChild('editor') editorContent: ElementRef;
     @ViewChild('content') content: ElementRef;
     @ViewChild('editorResult') editorResult: ElementRef;
     constructor(
         private socialSharing: SocialSharing,
-        private toastCtl: ToastController,
-        private modalCtl: ModalController
-    ) { }
+        private utils: UtilsService,
+        private events: Events,
+        private appVersion: AppVersion,
+        private platform: Platform,
+        private webIntent: WebIntent,
+        private activeRoute: ActivatedRoute
+    ) {}
 
     ngAfterViewInit(): void {
         this.initEditor();
+        this.listenerReadFileCode();
+    }
+
+    // 接收从example页面传递过来的代码实例
+    getExampleCode() {
+        this.activeRoute.queryParams.subscribe((params: Params) => {
+            this.editor.setValue(params.code);
+        });
     }
 
     initEditor() {
@@ -85,6 +104,7 @@ export class HomePage implements AfterViewInit {
             });
             this.content.nativeElement.querySelector('.CodeMirror').style.height = '100%';
             this.content.nativeElement.querySelector('.CodeMirror').style.fontFamily = '"Consolas", "Arial", "微软雅黑"';
+            this.getExampleCode();
         }, 100);
     }
 
@@ -116,9 +136,9 @@ export class HomePage implements AfterViewInit {
         editorResult.innerText = ''
         console.log = (...str) => {
           var node = document.createElement('div');
-          node.setAttribute('style', 'border-bottom: 1px rgb(235, 232, 232) solid;font-size:14px;padding:5px 5px;');
+          node.setAttribute('style', 'border-bottom: 1px rgb(235, 232, 232) solid;font-size:12px;padding:5px 5px;');
           var textNode = ''
-          textNode = document.createTextNode([...str].join('  '))
+          textNode = document.createTextNode([...str].join(' | '))
           node.appendChild(textNode)
           editorResult.appendChild(node);
         };
@@ -168,19 +188,47 @@ export class HomePage implements AfterViewInit {
     }
 
     async presentToast(message) {
-        const toast = await this.toastCtl.create({
-            message,
-            duration: 2000
-        });
-        toast.present();
+        this.utils.presentToast(message);
     }
 
     async saveModal() {
-        const modal = await this.modalCtl.create({
-            component: SaveModalPage,
-            cssClass: 'half-modal'
-        });
-        return await modal.present();
+        const props = {
+            editorValue: this.editor.getValue(),
+            fileName: this.openFileName
+        };
+        this.utils.halfModal(SaveModalPage, props);
     }
+
+    async openLocalDir() {
+        this.utils.halfModal(LocalCodePage);
+    }
+
+    listenerReadFileCode() {
+        this.events.subscribe('editorLocalCode', data => {
+            this.editor.setValue(data.code);
+            this.openFileName = data.fileName;
+            this.title = this.openFileName;
+        });
+    }
+
+    goToMarket() {
+        this.appVersion.getPackageName().then((data) => {
+          if (this.platform.is('ios')) {
+            window.open('itms-apps://itunes.apple.com/us/app/domainsicle-domain-name-search/id511364723?ls=1&mt=8'); // or itms://
+          } else if (this.platform.is('android')) {
+            // window.open('market://details?id=' + data);
+            this.webIntent.startActivity({
+              action: 'android.intent.action.VIEW',
+              url: 'market://details?id=' + data
+            }).then(() => {}, (err) => {
+              this.utils.presentToast('请安装应用市场APP后再试');
+            });
+          } else {
+            this.utils.presentToast('请安装应用市场APP后再试');
+          }
+        }, (err) => {
+          this.iConsole.log('PackageName - Error: ' + err);
+        });
+      }
 
 }
