@@ -9,3 +9,9 @@
 @import '~@ionic/angular/css/text-alignment.css';
 @import '~@ionic/angular/css/text-transformation.css';
 @import '~@ionic/angular/css/flex-utils.css';
+
+.half-modal .sc-ion-modal-md{
+    position: absolute;
+    bottom: 0;
+    height: 50%;
+}

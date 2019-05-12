@@ -1,6 +1,7 @@
 <ion-header>
   <ion-toolbar color="primary">
     <ion-buttons slot="start">
+      <ion-button *ngIf="menuIsEnabel===false"><ion-icon slot="icon-only" name="menu"></ion-icon></ion-button>
       <ion-menu-button></ion-menu-button>
     </ion-buttons>
     <ion-title>
@@ -10,6 +11,9 @@
         <ion-button (click)="showResultElement('RUN')">
             <ion-icon slot="icon-only" name="play-circle"></ion-icon>
         </ion-button>
+        <ion-button (click)="showTool()">
+            <ion-icon slot="icon-only" name="hammer"></ion-icon>
+        </ion-button>
       </ion-buttons>
   </ion-toolbar>
 </ion-header>
@@ -17,10 +21,32 @@
 <ion-content>
     <div class="JSEditor" #content>
         <textarea #editor autofocus></textarea>
-        <div class="showResultTitle" (click)="clearResult()">
-            <div class="title">Result</div>
-            <ion-icon slot="icon-only" name="trash"></ion-icon>
+        <div *ngIf="showResult" class="showResultTitle">
+            <div class="title">Output</div>
+            <ion-icon slot="icon-only" name="trash" (click)="clearResult()"></ion-icon>
         </div>
-        <div id="editorResult" #editorResult class="showResult"></div>
+        <div *ngIf="showResult" id="editorResult" #editorResult class="showResult"></div>
+        <div class="tools" *ngIf="showTools">
+            <ion-row align-items-center>
+                <ion-col size="2"></ion-col>
+                <ion-col size="2" (click)="undo()">
+                    <ion-icon name="undo"></ion-icon>
+                    <span>撤销</span>
+                </ion-col>
+                <ion-col size="2" (click)="redo()">
+                    <ion-icon name="redo"></ion-icon>
+                    <span>恢复</span>
+                </ion-col>
+                <ion-col size="2" (click)="saveModal()">
+                    <ion-icon name="save"></ion-icon>
+                    <span>保存</span>
+                </ion-col>
+                <ion-col size="2" (click)="share()">
+                    <ion-icon name="share"></ion-icon>
+                    <span>分享</span>
+                </ion-col>
+                <ion-col size="2"></ion-col>
+            </ion-row>
+        </div>
     </div>
 </ion-content>
