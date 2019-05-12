@@ -15,21 +15,25 @@ import { AppComponent } from './app.component';
 import { AppRoutingModule } from './app-routing.module';
 
 // modal page
-import { SaveModalPage } from './saveModal/saveModal.page';
-import { LocalCodePage } from './localCode/localCode.page';
+// import { SaveModalPage } from './saveModal/saveModal.page';
+import { SaveModalPageModule } from './saveModal/saveModal.module';
+// import { LocalCodePage } from './localCode/localCode.page';
+import { LocalCodePageModule } from './localCode/localCode.module';
 
 // import services
 import { UtilsService } from './services/utils';
 import { FileService } from './services/fileService';
 import { ExampleData } from './services/exampleData';
 @NgModule({
-  declarations: [AppComponent, SaveModalPage, LocalCodePage],
-  entryComponents: [SaveModalPage, LocalCodePage],
+  declarations: [AppComponent],
+  entryComponents: [],
   imports: [
     BrowserModule,
     FormsModule,
     IonicModule.forRoot(),
-    AppRoutingModule
+    AppRoutingModule,
+    LocalCodePageModule,
+    SaveModalPageModule
   ],
   providers: [
     StatusBar,

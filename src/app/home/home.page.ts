@@ -45,7 +45,9 @@ export class HomePage implements AfterViewInit {
     // 接收从example页面传递过来的代码实例
     getExampleCode() {
         this.activeRoute.queryParams.subscribe((params: Params) => {
-            this.editor.setValue(params.code);
+            if (params && Object.keys(params).length > 0) {
+                this.editor.setValue(params.code);
+            }
         });
     }
 
@@ -60,7 +62,7 @@ export class HomePage implements AfterViewInit {
                 mode: 'javascript',
                 indentWithTabs: true,
                 autofocus: true,
-                lineWrapping: true,
+                lineWrapping: false,
                 completeSingle: false,
                 selectionsMayTouch: true,
                 inputStyle: 'textarea',

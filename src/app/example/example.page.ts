@@ -8,7 +8,7 @@ import { ExampleData } from '../services/exampleData';
   styleUrls: ['example.page.scss']
 })
 export class ExamplePage {
-  private list: any;
+  list: any;
   constructor(
       private exampleList: ExampleData,
       private router: Router
