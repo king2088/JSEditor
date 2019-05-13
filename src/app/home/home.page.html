@@ -4,7 +4,7 @@
             <ion-menu-button></ion-menu-button>
         </ion-buttons>
         <ion-title>
-            {{title}}
+            {{'HOME_TITLE' | translate}}
         </ion-title>
         <ion-buttons slot="end">
             <ion-button (click)="showResultElement('RUN')">
@@ -21,7 +21,7 @@
     <div class="JSEditor" #content>
         <textarea #editor autofocus></textarea>
         <div *ngIf="showResult" class="showResultTitle">
-            <div class="title">Output</div>
+            <div class="title">{{'OUTPUT' | translate}}</div>
             <ion-icon slot="icon-only" name="trash" (click)="clearResult()"></ion-icon>
         </div>
         <div *ngIf="showResult" id="editorResult" #editorResult class="showResult"></div>
@@ -29,27 +29,27 @@
             <ion-row align-items-center>
                 <ion-col size="2" (click)="openLocalDir()">
                     <ion-icon name="folder-open"></ion-icon>
-                    <span>打开</span>
+                    <span>{{'OPEN_FILE' | translate}}</span>
                 </ion-col>
                 <ion-col size="2" (click)="undo()">
                     <ion-icon name="undo"></ion-icon>
-                    <span>撤销</span>
+                    <span>{{'UNDO' | translate}}</span>
                 </ion-col>
                 <ion-col size="2" (click)="redo()">
                     <ion-icon name="redo"></ion-icon>
-                    <span>恢复</span>
+                    <span>{{'REDO' | translate}}</span>
                 </ion-col>
                 <ion-col size="2" (click)="saveModal()">
                     <ion-icon name="save"></ion-icon>
-                    <span>保存</span>
+                    <span>{{'SAVE' | translate}}</span>
                 </ion-col>
                 <ion-col size="2" (click)="share()">
                     <ion-icon name="share"></ion-icon>
-                    <span>分享</span>
+                    <span>{{'SHARE' | translate}}</span>
                 </ion-col>
                 <ion-col size="2" (click)="goToMarket()">
                     <ion-icon name="star"></ion-icon>
-                    <span>打分</span>
+                    <span>{{'PRAISE' | translate}}</span>
                 </ion-col>
             </ion-row>
         </div>

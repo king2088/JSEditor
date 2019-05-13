@@ -13,6 +13,7 @@ export class UtilsService {
         const toast = await this.toastCtl.create({
             message,
             duration: 2000,
+            cssClass: 'JSEditorToast',
             position: position ? position : 'bottom'
         });
         toast.present();

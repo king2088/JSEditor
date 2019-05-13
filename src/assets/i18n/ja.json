@@ -1,0 +1,20 @@
+{
+    "HOME_TITLE":"JSエディタ",
+    "NO_SHARE_CODE": "共有するコードがありません",
+    "PLEASE_INSTALL_APP_STORE": "アプリマーケットアプリをインストールしてもう一度お試しください",
+    "OUTPUT": "出力結果",
+    "OPEN_FILE": "開く",
+    "UNDO": "戻る",
+    "REDO": "回復",
+    "SAVE": "保存",
+    "SHARE": "共有",
+    "PRAISE": "得点",
+    "EXAMPLE": "例",
+    "TUTORIAL": "チュートリアル",
+    "MENU": "ディレクトリ",
+    "MY_FILE": "私のJSファイル",
+    "EDIT":"編集",
+    "REMOVE": "削除",
+    "CREATE_JS_FILE_AND_SAVE": "JSファイルを作成して保存する",
+    "FILE_NAME": "ファイル名"
+}

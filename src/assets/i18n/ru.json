@@ -1,0 +1,20 @@
+{
+    "HOME_TITLE":"JS редактор",
+    "NO_SHARE_CODE": "Нет кода для обмена",
+    "PLEASE_INSTALL_APP_STORE": "Пожалуйста, установите приложение app market и попробуйте снова",
+    "OUTPUT": "экспорт",
+    "OPEN_FILE": "Open",
+    "UNDO": "Undo",
+    "REDO": "Redo",
+    "SAVE": "Save",
+    "SHARE": "Share",
+    "PRAISE": "Score",
+    "EXAMPLE": "примеров",
+    "TUTORIAL": "курс",
+    "MENU": "навигация",
+    "MY_FILE": "Мой JS файл",
+    "EDIT":"редактировать",
+    "REMOVE": "удалять",
+    "CREATE_JS_FILE_AND_SAVE": "Создайте файл JS и сохраните его",
+    "FILE_NAME": "Имя файла"
+}

@@ -1,0 +1,20 @@
+{
+    "HOME_TITLE":"JS 편집기",
+    "NO_SHARE_CODE": "공유 할 코드가 없습니다.",
+    "PLEASE_INSTALL_APP_STORE": "앱 마켓 앱을 설치하고 다시 시도하십시오.",
+    "OUTPUT": "출력 결과",
+    "OPEN_FILE": "열기",
+    "UNDO": "취소",
+    "REDO": "복구",
+    "SAVE": "저장",
+    "SHARE": "공유",
+    "PRAISE": "점수",
+    "EXAMPLE": "인스턴스",
+    "TUTORIAL": "자습서",
+    "MENU": "내비게이션",
+    "MY_FILE": "내 JS 파일",
+    "EDIT":"수정",
+    "REMOVE": "삭제",
+    "CREATE_JS_FILE_AND_SAVE": "JS 파일을 생성하고 저장하십시오.",
+    "FILE_NAME": "파일 이름"
+}

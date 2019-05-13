@@ -1,28 +1,18 @@
 <ion-header>
-        <ion-toolbar color="primary">
-          <ion-buttons slot="start">
-            <ion-menu-button></ion-menu-button>
-          </ion-buttons>
-          <ion-title>
-            List
-          </ion-title>
-        </ion-toolbar>
-      </ion-header>
-      
-      <ion-content>
-        <ion-list>
-          <ion-item *ngFor="let item of list" (click)="goEditor(item.code)">
-            <!-- <ion-icon [name]="item.icon" slot="start"></ion-icon> -->
-            {{item.name_cn}}
-            <!-- <div class="item-note" slot="end">
-              {{item.note}}
-            </div> -->
-          </ion-item>
-        </ion-list>
-        <!--
-          <div *ngIf="selectedItem" padding>
-            You navigated here from <b>{{selectedItem.title }}</b>
-          </div>
-        -->
-      </ion-content>
-      
+  <ion-toolbar color="primary">
+    <ion-buttons slot="start">
+      <ion-menu-button></ion-menu-button>
+    </ion-buttons>
+    <ion-title>
+      {{'EXAMPLE' | translate}}
+    </ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content>
+  <ion-list>
+    <ion-item *ngFor="let item of list; let i=index" (click)="goEditor(item.code)">
+      {{(i+1) + '. ' + item['name_' + lang]}}
+    </ion-item>
+  </ion-list>
+</ion-content>

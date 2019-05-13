@@ -1,0 +1,20 @@
+{
+    "HOME_TITLE":"JS 编辑器",
+    "NO_SHARE_CODE": "没有可以分享的代码",
+    "PLEASE_INSTALL_APP_STORE": "请安装应用市场APP后再试",
+    "OUTPUT": "输出结果",
+    "OPEN_FILE": "打开",
+    "UNDO": "撤销",
+    "REDO": "恢复",
+    "SAVE": "保存",
+    "SHARE": "分享",
+    "PRAISE": "打分",
+    "EXAMPLE": "实例",
+    "TUTORIAL": "教程",
+    "MENU": "导航",
+    "MY_FILE": "我的JS文件",
+    "EDIT":"编辑",
+    "REMOVE": "删除",
+    "CREATE_JS_FILE_AND_SAVE": "创建JS文件并保存",
+    "FILE_NAME": "文件名"
+}

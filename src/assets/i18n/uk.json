@@ -1,0 +1,20 @@
+{
+    "HOME_TITLE":"Редактор JS",
+    "NO_SHARE_CODE": "Немає коду для обміну",
+    "PLEASE_INSTALL_APP_STORE": "Установіть додаток на ринку додатків і повторіть спробу",
+    "OUTPUT": "Вихідні дані",
+    "OPEN_FILE": "Open",
+    "UNDO": "Undo",
+    "REDO": "Redo",
+    "SAVE": "Save",
+    "SHARE": "Share",
+    "PRAISE": "Score",
+    "EXAMPLE": "Примірник",
+    "TUTORIAL": "Підручник",
+    "MENU": "Навігація",
+    "MY_FILE": "Мій файл JS",
+    "EDIT":"Редагувати",
+    "REMOVE": "Видалити",
+    "CREATE_JS_FILE_AND_SAVE": "Створіть JS-файл і збережіть його",
+    "FILE_NAME": "Ім'я файлу"
+}

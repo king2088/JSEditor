@@ -1,12 +1,12 @@
 <ion-content>
     <div class="fileList">
-        <div class="title">我的JS文件</div>
+        <div class="title">{{'MY_FILE' | translate}}</div>
         <div class="list" *ngFor="let file of fileList">
             <div class="icon"><ion-icon name="document" slot="start" size="16"></ion-icon></div>
             <div class="name">{{file.name}}</div>
             <div class="operate">
-                <div class="editor" (click)="editorFile(file.name)">编辑</div>
-                <div class="remove" (click)="remove(file.name)">删除</div>
+                <div class="editor" (click)="editorFile(file.name)">{{'EDIT' | translate}}</div>
+                <div class="remove" (click)="remove(file.name)">{{'REMOVE' | translate}}</div>
             </div>
         </div>
     </div>

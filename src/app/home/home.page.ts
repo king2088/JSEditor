@@ -4,6 +4,7 @@ import { ActivatedRoute, Params } from '@angular/router';
 import { SocialSharing } from '@ionic-native/social-sharing/ngx';
 import { AppVersion } from '@ionic-native/app-version/ngx';
 import { WebIntent } from '@ionic-native/web-intent/ngx';
+import { TranslateService } from '@ngx-translate/core';
 import { SaveModalPage } from '../saveModal/saveModal.page';
 import { LocalCodePage } from '../localCode/localCode.page';
 import { UtilsService } from '../services/utils';
@@ -34,7 +35,8 @@ export class HomePage implements AfterViewInit {
         private appVersion: AppVersion,
         private platform: Platform,
         private webIntent: WebIntent,
-        private activeRoute: ActivatedRoute
+        private activeRoute: ActivatedRoute,
+        public translate: TranslateService
     ) {}
 
     ngAfterViewInit(): void {
@@ -132,26 +134,35 @@ export class HomePage implements AfterViewInit {
         const editorResult = this.editorResult.nativeElement;
         editorResult.innerText = '';
         const node = document.createElement('div');
-        node.setAttribute('style', 'border-bottom: 1px rgb(235, 232, 232) solid;font-size:14px;padding:5px 5px;');
+        node.setAttribute('style', 'border-bottom: 1px rgb(235, 232, 232) solid;padding:5px 5px;');
         this.runConsole = `
         var editorResult = document.getElementById('editorResult');
         editorResult.innerText = ''
         console.log = (...str) => {
           var node = document.createElement('div');
-          node.setAttribute('style', 'border-bottom: 1px rgb(235, 232, 232) solid;font-size:12px;padding:5px 5px;');
+          node.setAttribute('style', 'border-bottom: 1px rgb(235, 232, 232) solid;padding:5px 5px;');
           var textNode = ''
-          textNode = document.createTextNode([...str].join(' | '))
+          textNode = document.createTextNode([...str].join(', '))
           node.appendChild(textNode)
           editorResult.appendChild(node);
         };
       `;
         try {
             let runcode: any;
+            // 对用户输入的代码进行检测，发现包含document对象 以及 window对象 则进行替换,并禁止使用
+            if (this.codeText.indexOf('document.') > -1) {
+              this.codeText = 'console.log("document is forbidden")';
+            }
+            console.log('this.codeText', this.codeText);
+            if (this.codeText.indexOf('window.') > -1) {
+              this.codeText = 'console.log("window is forbidden")';
+            }
+            console.log('this.codeText', this.codeText);
             runcode = new Function(this.runConsole + this.codeText);
             runcode();
         } catch (err) {
             // 获取异常
-            node.setAttribute('style', 'border-bottom: 1px rgb(235, 232, 232) solid;font-size:14px;padding:5px 5px;color:red');
+            node.setAttribute('style', 'border-bottom: 1px rgb(235, 232, 232) solid;padding:5px 5px;color:red');
             const textNode = document.createTextNode(err);
             node.appendChild(textNode);
             editorResult.appendChild(node);
@@ -170,6 +181,7 @@ export class HomePage implements AfterViewInit {
 
     showTool() {
         this.showTools = true;
+        this.showResult = false;
         this.content.nativeElement.querySelector('.CodeMirror').style.height = '92%';
     }
 
@@ -177,7 +189,7 @@ export class HomePage implements AfterViewInit {
     share() {
         const code = this.editor.getValue();
         if (code.length <= 0) {
-            const message = '没有可以分享的代码';
+            const message = this.translate.instant('NO_SHARE_CODE');
             this.presentToast(message);
             return;
         }
@@ -223,10 +235,10 @@ export class HomePage implements AfterViewInit {
               action: 'android.intent.action.VIEW',
               url: 'market://details?id=' + data
             }).then(() => {}, (err) => {
-              this.utils.presentToast('请安装应用市场APP后再试');
+              this.utils.presentToast(this.translate.instant('PLEASE_INSTALL_APP_STORE'));
             });
           } else {
-            this.utils.presentToast('请安装应用市场APP后再试');
+            this.utils.presentToast(this.translate.instant('PLEASE_INSTALL_APP_STORE'));
           }
         }, (err) => {
           this.iConsole.log('PackageName - Error: ' + err);

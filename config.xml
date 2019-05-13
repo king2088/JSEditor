@@ -19,7 +19,6 @@
     <preference name="SplashShowOnlyFirstTime" value="false" />
     <preference name="SplashScreen" value="screen" />
     <preference name="SplashScreenDelay" value="3000" />
-    <preference name="SplashScreenHide" value="true" />
     <preference name="StatusBarBackgroundColor" value="#b40c0c" />
     <preference name="iosPersistentFileLocation" value="Compatibility" />
     <preference name="AndroidPersistentFileLocation" value="Compatibility" />
@@ -93,5 +92,6 @@
     <plugin name="cordova-plugin-file" spec="6.0.1" />
     <plugin name="cordova-plugin-app-version" spec="0.1.9" />
     <plugin name="com-darryncampbell-cordova-plugin-intent" spec="1.1.7" />
+    <plugin name="cordova-plugin-appminimize" spec="1.0.1" />
     <engine name="android" spec="7.1.4" />
 </widget>
