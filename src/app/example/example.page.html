@@ -11,7 +11,7 @@
 
 <ion-content>
   <ion-list>
-    <ion-item *ngFor="let item of list; let i=index" (click)="goEditor(item.code)">
+    <ion-item *ngFor="let item of list; let i=index" (click)="goEditor(item['name_'+lang],item.code)">
       {{(i+1) + '. ' + item['name_' + lang]}}
     </ion-item>
   </ion-list>

@@ -20,7 +20,8 @@ export class ExamplePage {
       this.lang = this.translate.currentLang ? this.translate.currentLang : 'en';
   }
 
-  goEditor(code) {
+  goEditor(title, code) {
+    code = `//${title}\r\n${code}`;
     this.router.navigate(['/home'], {
         queryParams: {
             code
