@@ -93,5 +93,10 @@
     <plugin name="cordova-plugin-app-version" spec="0.1.9" />
     <plugin name="com-darryncampbell-cordova-plugin-intent" spec="1.1.7" />
     <plugin name="cordova-plugin-appminimize" spec="1.0.1" />
+    <plugin name="cordova-plugin-admob-free" spec="0.26.0">
+        <variable name="ADMOB_APP_ID" value="ca-app-pub-8243351208300995~7583690090" />
+    </plugin>
+    <plugin name="cordova-plugin-nativestorage" spec="2.3.2" />
     <engine name="android" spec="7.1.4" />
+    <engine name="browser" spec="5.0.4" />
 </widget>

@@ -12,6 +12,8 @@ import { File } from '@ionic-native/file/ngx';
 import { AppVersion } from '@ionic-native/app-version/ngx';
 import { WebIntent } from '@ionic-native/web-intent/ngx';
 import { AppMinimize } from '@ionic-native/app-minimize/ngx';
+import { AdMobFree } from '@ionic-native/admob-free/ngx';
+import { NativeStorage } from '@ionic-native/native-storage/ngx';
 
 import { AppComponent } from './app.component';
 import { AppRoutingModule } from './app-routing.module';
@@ -26,6 +28,7 @@ import { LocalCodePageModule } from './localCode/localCode.module';
 import { UtilsService } from './services/utils';
 import { FileService } from './services/fileService';
 import { ExampleData } from './services/exampleData';
+import { AdMobService } from './services/adMobService';
 
 export function createTranslateHttpLoader(http: HttpClient) {
   return new TranslateHttpLoader(http, './assets/i18n/', '.json');
@@ -58,9 +61,12 @@ export function createTranslateHttpLoader(http: HttpClient) {
     AppVersion,
     WebIntent,
     AppMinimize,
+    AdMobFree,
     UtilsService,
     FileService,
     ExampleData,
+    AdMobService,
+    NativeStorage,
     { provide: RouteReuseStrategy, useClass: IonicRouteStrategy }
   ],
   bootstrap: [AppComponent]

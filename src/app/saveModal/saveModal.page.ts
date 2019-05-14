@@ -1,6 +1,7 @@
 import { Component, AfterViewInit, OnDestroy } from '@angular/core';
 import { NavParams } from '@ionic/angular';
 import { FileService } from '../services/fileService';
+import { AdMobService } from '../services/adMobService';
 @Component({
     selector: 'app-saveModal',
     templateUrl: 'saveModal.page.html',
@@ -13,7 +14,8 @@ export class SaveModalPage implements AfterViewInit, OnDestroy {
     modifyFileName: string;
     constructor(
         private navParams: NavParams,
-        private file: FileService
+        private file: FileService,
+        private adMobFree: AdMobService
         ) {
         this.JScode = this.navParams.get('editorValue');
         this.modifyFileName = this.navParams.get('fileName');
@@ -24,6 +26,7 @@ export class SaveModalPage implements AfterViewInit, OnDestroy {
 
     ngAfterViewInit() {
         this.hideAndShowMenuDom('none');
+        this.adMobBannerShow();
     }
 
     hideAndShowMenuDom(display?) {
@@ -48,6 +51,7 @@ export class SaveModalPage implements AfterViewInit, OnDestroy {
 
     ngOnDestroy() {
         this.hideAndShowMenuDom();
+        this.closeBannerAd();
     }
 
     // 点击保存
@@ -58,5 +62,13 @@ export class SaveModalPage implements AfterViewInit, OnDestroy {
         }
         this.file.createAndWriteFile(this.fileName, this.JScode);
 
+    }
+    // 展示banner广告
+    async adMobBannerShow() {
+        await this.adMobFree.bannerAdShow();
+    }
+
+    async closeBannerAd() {
+        await this.adMobFree.closeBannerAd();
     }
 }

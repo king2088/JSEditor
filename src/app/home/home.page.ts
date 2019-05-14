@@ -4,10 +4,12 @@ import { ActivatedRoute, Params } from '@angular/router';
 import { SocialSharing } from '@ionic-native/social-sharing/ngx';
 import { AppVersion } from '@ionic-native/app-version/ngx';
 import { WebIntent } from '@ionic-native/web-intent/ngx';
+import { NativeStorage } from '@ionic-native/native-storage/ngx';
 import { TranslateService } from '@ngx-translate/core';
 import { SaveModalPage } from '../saveModal/saveModal.page';
 import { LocalCodePage } from '../localCode/localCode.page';
 import { UtilsService } from '../services/utils';
+import { AdMobService } from '../services/adMobService';
 declare var CodeMirror: any;
 @Component({
     selector: 'app-home',
@@ -25,6 +27,7 @@ export class HomePage implements AfterViewInit {
     // 打开的文件名称
     openFileName: string;
     title = 'JS Editor';
+    runCodeCount = 0;
     @ViewChild('editor') editorContent: ElementRef;
     @ViewChild('content') content: ElementRef;
     @ViewChild('editorResult') editorResult: ElementRef;
@@ -36,7 +39,9 @@ export class HomePage implements AfterViewInit {
         private platform: Platform,
         private webIntent: WebIntent,
         private activeRoute: ActivatedRoute,
-        public translate: TranslateService
+        public translate: TranslateService,
+        public adMob: AdMobService,
+        public storage: NativeStorage
     ) {}
 
     ngAfterViewInit(): void {
@@ -167,6 +172,22 @@ export class HomePage implements AfterViewInit {
             node.appendChild(textNode);
             editorResult.appendChild(node);
         }
+        this.storage.getItem('runCodeCount').then(count => {
+            // 当count达到最大33333的时候，重置为0
+            if (+count === 33333) {
+                count = 0;
+            }
+            // 每运行代码3次弹窗一次
+            this.runCodeCount = +count + 1;
+            if (this.runCodeCount % 3 === 0) {
+                this.interstitialAdShow();
+            }
+            this.storage.setItem('runCodeCount', this.runCodeCount);
+        }, () => {
+            this.storage.setItem('runCodeCount', this.runCodeCount).then(() => {
+                this.interstitialAdShow();
+            }, () => {});
+        });
     }
 
     // 撤销操作
@@ -243,6 +264,10 @@ export class HomePage implements AfterViewInit {
         }, (err) => {
           this.iConsole.log('PackageName - Error: ' + err);
         });
-      }
+    }
+
+    async interstitialAdShow() {
+        await this.adMob.interstitialAdShow();
+    }
 
 }

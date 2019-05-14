@@ -28,7 +28,9 @@ plugins/
 plugins/android.json
 plugins/ios.json
 $RECYCLE.BIN/
-
+*.apk
+*.keystore
+*.old
 .DS_Store
 Thumbs.db
 UserInterfaceState.xcuserstate

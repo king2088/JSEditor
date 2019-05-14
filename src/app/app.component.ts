@@ -1,10 +1,10 @@
+import { AdMobFree } from '@ionic-native/admob-free/ngx';
 import { Component } from '@angular/core';
 import { Platform } from '@ionic/angular';
 import { TranslateService } from '@ngx-translate/core';
 import { SplashScreen } from '@ionic-native/splash-screen/ngx';
 import { AppMinimize } from '@ionic-native/app-minimize/ngx';
 import { StatusBar } from '@ionic-native/status-bar/ngx';
-
 @Component({
     selector: 'app-root',
     templateUrl: 'app.component.html'
