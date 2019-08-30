@@ -16,5 +16,6 @@
     "EDIT":"Edit",
     "REMOVE": "Remove",
     "CREATE_JS_FILE_AND_SAVE": "Create a JS file and save it",
-    "FILE_NAME": "File name"
+    "FILE_NAME": "File name",
+    "NO_FILE": "You have not saved any JS files yet"
 }

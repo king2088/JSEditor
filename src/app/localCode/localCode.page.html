@@ -1,6 +1,7 @@
 <ion-content>
     <div class="fileList">
         <div class="title">{{'MY_FILE' | translate}}</div>
+        <div class="nofile" *ngIf="fileList.length == 0">{{'NO_FILE' | translate}}</div>
         <div class="list" *ngFor="let file of fileList">
             <div class="icon"><ion-icon name="document" slot="start" size="16"></ion-icon></div>
             <div class="name">{{file.name}}</div>

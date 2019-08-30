@@ -45,6 +45,11 @@
         z-index: 999;
         text-align: center;
         color: #263238;
+        ion-row{
+            position: relative;
+            top: 50%;
+            transform: translateY(-50%)
+        }
         span{
             font-size: 12px;
             display: block;

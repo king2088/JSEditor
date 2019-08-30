@@ -16,5 +16,6 @@
     "EDIT":"Upravit",
     "REMOVE": "Smazat",
     "CREATE_JS_FILE_AND_SAVE": "Vytvořte soubor JS a uložte jej",
-    "FILE_NAME": "Název souboru"
+    "FILE_NAME": "Název souboru",
+    "NO_FILE": "Ještě jste neuložili žádné soubory JS"
 }

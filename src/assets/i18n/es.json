@@ -16,5 +16,6 @@
     "EDIT":"Editar",
     "REMOVE": "Eliminar",
     "CREATE_JS_FILE_AND_SAVE": "Crea un archivo JS y guárdalo.",
-    "FILE_NAME": "Nombre de archivo"
+    "FILE_NAME": "Nombre de archivo",
+    "NO_FILE": "A?n no has guardado ning?n archivo JS"
 }

@@ -16,5 +16,6 @@
     "EDIT":"تحرير",
     "REMOVE": "حذف",
     "CREATE_JS_FILE_AND_SAVE": "قم بإنشاء ملف JS وحفظه",
-    "FILE_NAME": "اسم الملف"
+    "FILE_NAME": "اسم الملف",
+    "NO_FILE": "لم تقم بحفظ أي ملفات JS حتى الآن."
 }

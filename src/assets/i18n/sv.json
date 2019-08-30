@@ -16,5 +16,6 @@
     "EDIT":"Redigera",
     "REMOVE": "Radera",
     "CREATE_JS_FILE_AND_SAVE": "Skapa en JS-fil och spara den",
-    "FILE_NAME": "Filnamn"
+    "FILE_NAME": "Filnamn",
+    "NO_FILE": "Du har inte sparat några JS-filer än"
 }

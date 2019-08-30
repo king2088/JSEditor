@@ -16,5 +16,6 @@
     "EDIT":"แก้ไข",
     "REMOVE": "ลบ",
     "CREATE_JS_FILE_AND_SAVE": "สร้างไฟล์ JS และบันทึก",
-    "FILE_NAME": "ชื่อไฟล์"
+    "FILE_NAME": "ชื่อไฟล์",
+    "NO_FILE": "คุณยังไม่ได้บันทึกไฟล์ JS ใด ๆ"
 }

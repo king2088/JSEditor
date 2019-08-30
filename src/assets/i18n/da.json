@@ -16,5 +16,6 @@
     "EDIT":"Edit",
     "REMOVE": "Slet",
     "CREATE_JS_FILE_AND_SAVE": "Opret en JS-fil og gem den",
-    "FILE_NAME": "Filnavn"
+    "FILE_NAME": "Filnavn",
+    "NO_FILE": "Du har ikke gemt nogen JS-filer endnu"
 }

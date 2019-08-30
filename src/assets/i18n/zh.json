@@ -16,5 +16,6 @@
     "EDIT":"编辑",
     "REMOVE": "删除",
     "CREATE_JS_FILE_AND_SAVE": "创建JS文件并保存",
-    "FILE_NAME": "文件名"
+    "FILE_NAME": "文件名",
+    "NO_FILE": "你还未保存过任何JS文件"
 }

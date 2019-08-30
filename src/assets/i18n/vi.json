@@ -16,5 +16,6 @@
     "EDIT":"Chỉnh sửa",
     "REMOVE": "Xóa",
     "CREATE_JS_FILE_AND_SAVE": "Tạo một tệp JS và lưu nó",
-    "FILE_NAME": "Tên tệp"
+    "FILE_NAME": "Tên tệp",
+    "NO_FILE": "Bạn chưa lưu bất kỳ tệp JS nào"
 }

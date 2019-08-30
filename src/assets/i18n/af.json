@@ -16,5 +16,6 @@
     "EDIT":"uitgeven",
     "REMOVE": "Verwijder",
     "CREATE_JS_FILE_AND_SAVE": "Maak een JS-bestand en sla het op",
-    "FILE_NAME": "Bestandsnaam"
+    "FILE_NAME": "Bestandsnaam",
+    "NO_FILE": "U hebt nog geen JS-bestanden opgeslagen"
 }

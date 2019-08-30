@@ -16,5 +16,6 @@
     "EDIT":"Bearbeiten",
     "REMOVE": "Löschen",
     "CREATE_JS_FILE_AND_SAVE": "Erstellen Sie eine JS-Datei und speichern Sie sie",
-    "FILE_NAME": "Dateiname"
+    "FILE_NAME": "Dateiname",
+    "NO_FILE": "Sie haben noch keine JS-Dateien gespeichert"
 }
