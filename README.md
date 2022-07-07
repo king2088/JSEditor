@@ -1,6 +1,6 @@
 # JSEditor
 
-<img src="./JSEditorImagesForGooglePlay/app-512.png" width="80px" />
+![LOGO](JSEditorImagesForGooglePlay/app-512.png)
 
 JavaScript Editor for web/android/iOS. JSEditor is an offline JavaScript editor. With JSEditor, you can write, run, debug, save and read local JS files in JavaScript anytime, anywhere. Supports 19 languages including Chinese, Korean, Vietnamese, Thai, Japanese, Russian, Dutch, French, Italian, Arabic, Ukrainian, and Spanish. It supports mobile phone and tablet. At present, JSEditor has 16 built-in running examples. I wish you a happy use. If you have any better suggestions, please contact me, thank you.
 
@@ -8,7 +8,7 @@ JavaScript Editor for web/android/iOS. JSEditor is an offline JavaScript editor.
 
 Preview image
 
-![](./JSEditorImagesForGooglePlay/en_20190513234937.png)
+![Preview](JSEditorImagesForGooglePlay/en_20190513234937.png)
 
 ## install
 
